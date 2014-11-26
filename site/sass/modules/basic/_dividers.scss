@@ -3,5 +3,11 @@
  *============================================================================*/
 
 hr {
-	
+	display: block;
+	height: 1px;
+
+	margin: $general-margin 0;
+
+	border: none;
+	background-color: $color-hr;
 }
