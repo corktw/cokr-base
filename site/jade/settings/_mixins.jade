@@ -1,0 +1,51 @@
+//-********************************************************************************
+//---------------------------------------------------------------------------------
+//- Mixins
+//---------------------------------------------------------------------------------
+//-********************************************************************************
+
+//-============================================================
+//- Nav Menu
+//-============================================================
+
+//- This mixin iterates through and creates each menu item
+mixin navmenu(menu_items)
+	.navmenu
+		ul
+			each fst_item in menu_items
+				li
+					+navlinks(fst_item)
+					if fst_item.child
+						ul
+							each srd_item in fst_item.child
+								li
+									+navlinks(srd_item)
+									if srd_item.child
+										ul
+											each trd_item in srd_item.child
+												li
+													+navlinks(trd_item)
+//- This mixin generates the links
+mixin navlinks(item)
+	- var linkatts = { "href": item.link, "type": item.type }
+	a()&attributes(linkatts)= item.title
+
+//- Example
+//- +navmenu([
+//- 	{ "title":"Home", "link":"index.htm" },
+//- 	{ "title":"About My Work", "link":"about.htm",
+//- 		"child": [
+//- 			{ "title":"Noteable Clients", "link":"clients.htm" },
+//- 			{ "title":"Behance Portfolio", "link":"http://www.behance.net", "type":"out_follow" },
+//- 			{ "title":"Resume Download", "link":"resume.doc", "type": "download",
+//- 				"child": [
+//- 					{ "title":"Noteable Clients", "link":"clients.htm" },
+//- 					{ "title":"Behance Portfolio", "link":"http://www.behance.net", "type":"out_follow" },
+//- 					{ "title":"Resume Download", "link":"resume.doc", "type": "download" }
+//- 				]
+//- 			 },
+//- 		]
+//- 	},
+//- 	{ "title":"Blog", "link":"blog.htm" },
+//- 	{ "title": "Contact", "link":"http://www.hostedform.com", "type":"out_nofollow" }
+//- ])

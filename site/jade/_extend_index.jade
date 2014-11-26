@@ -1,0 +1,72 @@
+//-********************************************************************************
+//---------------------------------------------------------------------------------
+//- Extend_index.
+//---------------------------------------------------------------------------------
+//-********************************************************************************
+
+block config
+	include settings/_config
+block variables
+	include settings/_variables
+block mixins
+	include settings/_mixins
+block layouts
+	include settings/_layouts
+
+//-============================================================
+//- Layouts.
+//-============================================================
+
+doctype
+html
+	head
+		block pagemeta
+			// PAGEMETA
+			+addPageMeta
+		block external
+			block frameworks
+				// FRAMEWORKS
+				+addBootstrapCss
+				+addBootstrapCssCDN
+				+addBootstrapGrids
+			block stylesheets
+				// STYLESHEETS
+				+addCss
+			block fonts
+				// FONTS
+				+addGoogleFonts
+				+addGoogleFontsCDN
+				+addFontAwesome
+				+addFontAwesomeCDN
+			block prescripts
+				// PRE-SCRIPTS
+				+addModernizr
+				+addModernizrCDN
+				+addRespondJs
+	//==== End head ============================================================
+	body
+		block nav
+			nav( id=navID, class=navClass )
+				block navContent
+		//==== End nav ============================================================
+		block header
+			header( id=headerID, class=headerClass )
+				block headerContent
+		//==== End header ============================================================
+		block main
+			main( id=mainID, class=mainClass )
+				block mainContent
+		//==== End main ============================================================
+		block footer
+			footer( id=footerID, class=footerClass )
+				block footerContent
+		//==== End footer ============================================================
+		scripts
+			+addJquery
+			+addJqueryCDN
+			+addBootstrapJs
+			+addBootstrapJsCDN
+			+addJs
+		//==== End scripts ============================================================
+	//==== End body ============================================================
+//==== End html ============================================================

@@ -1,0 +1,155 @@
+//-********************************************************************************
+//---------------------------------------------------------------------------------
+//- Config
+//---------------------------------------------------------------------------------
+//-********************************************************************************
+
+- var pageTitle = "THIS IS DEFAULT PAGE TITLE"
+- var pageDesc = "THIS IS DEFAULT PAGE DESCRIPTION"
+- var pageKeywords = "THIS IS DEFAULT PAGE KEYWORDS"
+- var useGoogleFonts = "googlefonts"
+
+//-============================================================
+//- Path
+//-============================================================
+
+- var pathSite = "../"
+- var pathBower = "../../bower_components/"
+- var pathCDN = "http:"
+
+- var pathCss = pathSite + "css/styles"
+- var pathJs = pathSite + "js/scripts"
+- var pathGoogleFonts = pathSite + "fonts/" + useGoogleFonts
+- var pathBootstrapGrids = pathSite + "css/bootstrap/bootstrap-grids.css"
+- var pathRespondJs = pathSite + "js/respond/respond.min.js"
+
+- var pathJquery = pathBower + "jquery/dist/jquery.min.js"
+- var pathBootstrapCss = pathBower + "bootstrap/dist/css/bootstrap.min.css"
+- var pathBootstrapJs = pathBower + "bootstrap/dist/js/bootstrap.min.js"
+- var pathFontAwesome = pathBower + "fontawesome/css/font-awesome.min.css"
+- var pathModernizr = pathBower + "modernizr/modernizr.js"
+
+
+- var pathGoogleFontsCDN = pathCDN + "//fonts.googleapis.com/css?family=" + useGoogleFonts
+- var pathJqueryCDN = pathCDN + "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
+- var pathBootstrapCssCDN = pathCDN + "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
+- var pathBootstrapJsCDN = pathCDN + "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"
+- var pathFontAwesomeCDN = pathCDN + "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+- var pathModernizrCDN = pathCDN + "//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"
+
+//-============================================================
+//- Switchers
+//-============================================================
+
+- var addCss = false
+- var addJs = false
+- var addGoogleFonts = false
+- var addBootstrapGrids = false
+
+- var addJquery = false
+- var addBootstrapCss = false
+- var addBootstrapJs = false
+- var addFontAwesome = false
+- var addModernizr = false
+- var addRespondJs = false
+- var addGoogleFontsCDN = false
+- var addJqueryCDN = false
+- var addBootstrapCssCDN = false
+- var addBootstrapJsCDN = false
+- var addFontAwesomeCDN = false
+- var addModernizrCDN = false
+
+//-============================================================
+//- Page Mixins
+//-============================================================
+
+mixin addPageMeta
+	title #{pageTitle}
+	meta( charset="utf-8" )
+	meta( charset="viewport" content="width=device-width, initial-scale=1.0" )
+	meta( name="keywords" content=pageKeywords )
+	meta( name="description" content=pageDesc )
+
+//-============================================================
+//- Switchers Mixins
+//-============================================================
+
+mixin addCss
+	if addCss
+		//== Css ==
+		link( href=pathCss rel="stylesheet", type="text/css" )
+
+mixin addJs
+	if addJs
+		//== Js ==
+		script( href=pathJs )
+
+mixin addGoogleFonts
+	if addGoogleFonts
+		//== GoogleFonts ==
+		link( href=pathGoogleFonts rel="stylesheet", type="text/css" )
+
+mixin addJquery
+	if addJquery
+		//== Jquery ==
+		script( href=pathJquery )
+
+mixin addBootstrapCss
+	if addBootstrapCss
+		//== BootstrapCss ==
+		link( href=pathBootstrapCss rel="stylesheet", type="text/css" )
+
+mixin addBootstrapGrids
+	if addBootstrapGrids
+		//== BootstrapGrids ==
+		link( href=pathBootstrapGrids rel="stylesheet", type="text/css" )
+
+mixin addBootstrapJs
+	if addBootstrapJs
+		//== BootstrapJs ==
+		script( href=pathBootstrapJs )
+
+mixin addFontAwesome
+	if addFontAwesome
+		//== FontAwesome ==
+		link( href=pathFontAwesome rel="stylesheet", type="text/css" )
+
+mixin addModernizr
+	if addModernizr
+		//== Modernizr ==
+		script( href=pathModernizr )
+
+mixin addRespondJs
+	if addRespondJs
+		//== RespondJs ==
+		script( href=pathRespondJs )
+
+mixin addGoogleFontsCDN
+	if addGoogleFontsCDN
+		//== GoogleFontsCDN ==
+		link( href=pathGoogleFontsCDN rel="stylesheet", type="text/css" )
+
+mixin addJqueryCDN
+	if addJqueryCDN
+		//== JqueryCDN ==
+		script( href=pathJqueryCDN )
+
+mixin addBootstrapCssCDN
+	if addBootstrapCssCDN
+		//== BootstrapCssCDN ==
+		link( href=pathBootstrapCssCDN rel="stylesheet", type="text/css" )
+
+mixin addBootstrapJsCDN
+	if addBootstrapJsCDN
+		//== BootstrapJsCDN ==
+		script( href=pathBootstrapJsCDN )
+
+mixin addFontAwesomeCDN
+	if addFontAwesomeCDN
+		//== FontAwesomeCDN ==
+		link( href=pathFontAwesomeCDN rel="stylesheet", type="text/css" )
+
+mixin addModernizrCDN
+	if addModernizrCDN
+		//== ModernizrCDN ==
+		script( href=pathModernizrCDN )
