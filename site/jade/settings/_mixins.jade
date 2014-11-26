@@ -49,3 +49,77 @@ mixin navlinks(item)
 //- 	{ "title":"Blog", "link":"blog.htm" },
 //- 	{ "title": "Contact", "link":"http://www.hostedform.com", "type":"out_nofollow" }
 //- ])
+
+
+//-============================================================
+//- Bootstrap Columns Generator
+//-============================================================
+
+mixin bsColA( div, lg, md, sm, xs )
+	if lg > 0 
+		- var lgW = "col-lg-" + lg
+	else
+		- var lgW = null
+	if md > 0 
+		- var mdW = "col-md-" + md
+	else
+		- var mdW = null
+	if sm > 0 
+		- var smW = "col-sm-" + sm
+	else
+		- var smW = null
+	if xs > 0 
+		- var xsW = "col-xs-" + xs
+	else
+		- var xsW = null
+	- var arrj = [lgW, mdW, smW, xsW]
+	#{div}( class=arrj )&attributes(attributes)
+
+mixin bsColB( div, lg, md, sm, xs )
+	if lg > 0 
+		- var lgW = "col-lg-" + (12-lg)
+	else
+		- var lgW = null
+	if md > 0 
+		- var mdW = "col-md-" + (12-md)
+	else
+		- var mdW = null
+	if sm > 0 
+		- var smW = "col-sm-" + (12-sm)
+	else
+		- var smW = null
+	if xs > 0 
+		- var xsW = "col-xs-" + (12-xs)
+	else
+		- var xsW = null
+	- var arrj = [lgW, mdW, smW, xsW]
+	#{div}( class=arrj )&attributes(attributes)
+
+mixin bsColS( div, lg, md, sm, xs )
+	if lg > 0 
+		- var lgW = "col-lg-" + (12/lg)
+	else
+		- var lgW = null
+	if md > 0 
+		- var mdW = "col-md-" + (12/md)
+	else
+		- var mdW = null
+	if sm > 0 
+		- var smW = "col-sm-" + (12/sm)
+	else
+		- var smW = null
+	if xs > 0 
+		- var xsW = "col-xs-" + (12/xs)
+	else
+		- var xsW = null
+	- var arrj = [lgW, mdW, smW, xsW]
+	#{div}( class=arrj )&attributes(attributes)
+
+//-============================================================
+//- Utilities
+//-============================================================
+
+mixin multiplier(limit)
+	- for (var i = 1; i <= limit; i++) {
+	block
+	- }
